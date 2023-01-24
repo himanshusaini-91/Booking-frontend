@@ -1,0 +1,32 @@
+<div class="row text-center">
+  <label>Your History</label>
+</div>
+<div class="row text-center" *ngIf="results && results.length > 0">
+  <div class="col-md-12" *ngFor="let item of results; let i = index">
+    <div class="col-md-6">
+      <label>Search Term</label>
+      <p>{{item.seatchTerm}}</p>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="item.data.length > 0">
+        <div class="row">
+          <div class="col-md-12" *ngFor="let k of item.data; let j = index">
+            <div class="row">
+              <div class="col-md-6">
+                <label>User Image</label>
+                <img src="{{k.avatar_url}}" height="100" width="100" />
+              </div>
+              <div class="col-md-6">
+                <label>Github User name</label>
+                <div>{{k.login}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!item.data.length">
+        <label>Search result not found</label>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.box{
+    width: 30px;
+    border: 1px solid darkgrey;
+    padding: 2px;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+.form-control {
+    border-radius: 4px !important;
+    width: 100% !important;
+    border: 1.5px solid #d0d2d3 !important;
+    font-size: 12px !important;
+    padding: 6px 15px !important;
+    margin: 0 !important;
+  }
+
+.available{
+  background-color: green !important;
+}
+
+
+#main {
+  width: 1400px;
+  height: 500px;
+  display: flex;
+  margin-left: 10px;
+  flex-wrap: wrap;
+  border: 1px solid black;
+}
+
+#main label {
+  width: 35px;
+  height: 40px;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid darkgray;
+  background-color: yellow;
+}
+

@@ -1,0 +1,34 @@
+<div class="text-center">
+    <form [formGroup]="searchFormGroup">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Search Github User</label>
+                <div class="form-group">
+                    <input class="inputBox" formControlName="search" [(ngModel)]="searchValue" placeholder="Name" name="fullName"/>
+                    <mat-error *ngIf="searchFormGroup && searchFormGroup.controls['search'].hasError('require')">
+                      Please enter some value
+                    </mat-error>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="button" [disabled]="searchFormGroup.invalid" class="btn btn-success col-md-2  text-center" (click)="getResults(searchValue)">Search</button>
+            </div>
+        </div>
+    </form>
+    <div class="row" *ngIf="results && results.length > 0">
+        <label>Search results</label>
+        <div class="col-md-12"*ngFor="let item of results; let i = index">
+            <div class="col-md-6">
+                <label>User Image</label>
+                <img src="{{item.avatar_url}}" height="100" width="100"/>
+            </div>
+            <div class="col-md-6">
+                <label>Github User name</label>
+                <div>{{item.login}}</div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <button type="button" class="btn btn-success col-md-2  text-center" (click)="clearHistory()">Clear History</button>
+        </div>
+    </div>
+</div>
